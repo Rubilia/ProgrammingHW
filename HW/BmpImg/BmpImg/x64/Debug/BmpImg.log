@@ -1,0 +1,16 @@
+﻿  Source.cpp
+D:\Documents\ProgrammingHWSPBU\HW\BmpImg\BmpImg\Source.cpp(113,24): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Documents\ProgrammingHWSPBU\HW\BmpImg\BmpImg\Source.cpp(113,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Documents\ProgrammingHWSPBU\HW\BmpImg\BmpImg\Source.cpp(164,24): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Documents\ProgrammingHWSPBU\HW\BmpImg\BmpImg\Source.cpp(164,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Documents\ProgrammingHWSPBU\HW\BmpImg\BmpImg\Source.cpp(236,24): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Documents\ProgrammingHWSPBU\HW\BmpImg\BmpImg\Source.cpp(236,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Documents\ProgrammingHWSPBU\HW\BmpImg\BmpImg\Source.cpp(244,33): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Documents\ProgrammingHWSPBU\HW\BmpImg\BmpImg\Source.cpp(244,53): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Documents\ProgrammingHWSPBU\HW\BmpImg\BmpImg\Source.cpp(244,83): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Documents\ProgrammingHWSPBU\HW\BmpImg\BmpImg\Source.cpp(244,103): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Documents\ProgrammingHWSPBU\HW\BmpImg\BmpImg\Source.cpp(250,4): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Documents\ProgrammingHWSPBU\HW\BmpImg\BmpImg\Source.cpp(250,66): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Documents\ProgrammingHWSPBU\HW\BmpImg\BmpImg\Source.cpp(252,5): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Documents\ProgrammingHWSPBU\HW\BmpImg\BmpImg\Source.cpp(252,67): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  BmpImg.vcxproj -> D:\Documents\ProgrammingHWSPBU\HW\BmpImg\x64\Debug\BmpImg.exe
