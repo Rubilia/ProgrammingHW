@@ -1,12 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include<time.h>
-#include <vector>
 #include <iostream>
 
 
 template <typename T>
-void print_arr(T arr, int n, int m, bool align = false)
+void print_arr(T arr, int n, int m, bool align = true)
 {
     for (int l = 0; l < n; l++)
     {
@@ -22,30 +19,30 @@ void print_arr(T arr, int n, int m, bool align = false)
 }
 
 
-std::vector<std::vector<int>> task1() {
+int** task1() {
     int n, m, val = 1;
     std::cout << "Input n: ";
     std::cin >> n;
     std::cout << "Input m: ";
     std::cin >> m;
+    int** ret = new int*[n];
 
-    std::vector<std::vector<int>> ret(n);
 
     for (int i = 0; i < n; i++)
     {
-        std::vector<int> line(m);
+        int* line = new int[m];
         for (int pos = (i % 2 == 0) ? 0 : m - 1; (i % 2 == 0) ? pos < m : pos >= 0; pos += 1 - 2 * ((i) % 2), val++)
         {
-            line.at(pos) = val;
+            line[pos] = val;
         }
-        ret.at(i) = line;
+        ret[i] = line;
     }
-
+    print_arr(ret, n, m);
     return ret;
 }
 
 
-std::vector<std::vector<int>> task2() {
+int** task2() {
     srand(time(0));
     int n, m;
     std::cout << "Input n: ";
@@ -53,15 +50,15 @@ std::vector<std::vector<int>> task2() {
     std::cout << "Input m: ";
     std::cin >> m;
 
-    std::vector<std::vector<int>> ret(n);
+    int** ret = new int* [n];
     for (int i = 0; i < n; i++)
     {
-        std::vector<int> line(m);
+        int* line = new int[m];
         for (int pos = 0; pos < m; pos++)
         {
-            line.at(pos) = rand() % 100000;
+            line[pos] = rand() % 100000;
         }
-        ret.at(i) = line;
+        ret[i] = line;
     }
     print_arr(ret, n, m, true);
     return ret;
@@ -90,8 +87,7 @@ double mysqrt(double x, double eps = 1e-6) {
 }
 
 
-std::vector<std::vector<int>> fill_cycle(std::vector<std::vector<int>>& arr, int a, int& val, bool spiral_direction) {
-    int n = arr.size(), m = arr[0].size();
+int** fill_cycle(int** arr, int a, int n, int m, int& val, bool spiral_direction) {
     if (spiral_direction) {
         for (int y = a; y < m - a; y++, val++)
             arr[a][y] = val;
@@ -122,11 +118,16 @@ void task5(bool spiral_direction=true) {
     std::cout << "Input m: ";
     std::cin >> m;
 
-    std::vector<std::vector<int>> ret(n, std::vector<int>(m, 0));
+    int** ret = new int* [n];
+    for (size_t i = 0; i < n; i++)
+    {
+        ret[i] = new int[m];
+    }
+
     int a = 0;
     for (a = 0; a < ((m >= n)? n : m) / 2; a++)
     {
-        ret = fill_cycle(ret, a, val, spiral_direction);
+        ret = fill_cycle(ret, a, n, m, val, spiral_direction);
     }
 
     int min = (m < n) ? m : n;
@@ -143,7 +144,7 @@ void task5(bool spiral_direction=true) {
 }
 
 
-std::vector<std::vector<int>> task6() {
+int** task6() {
     return task2();
 }
 
@@ -152,7 +153,7 @@ void shiftArray(int A[], int n, int k) {
     k %= n;
     if (k == 0)
         return;
-    std::vector<int> tmp(k, 0);
+    int* tmp = new int[k];
     for (int i = 0; i < k; i++)
     {
         tmp[i] = A[i + n - k];
@@ -179,7 +180,11 @@ void task8(bool direction=true) {
     std::cout << "Input m: ";
     std::cin >> m;
 
-    std::vector<std::vector<int>> ret(n, std::vector<int>(m, 0));
+    int** ret = new int*[n];
+    for (size_t i = 0; i < n; i++)
+    {
+        ret[i] = new int[m];
+    }
 
 
     for (int s = 0; s <= n + m - 2; s++)
@@ -195,9 +200,8 @@ void task8(bool direction=true) {
     print_arr(ret, n, m, true);
 }
 
-// Задачи codeforces в отдельной папке
-
 int main()
 {
+    task8();
     return 0;
 }
