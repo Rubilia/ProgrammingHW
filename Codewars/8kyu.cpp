@@ -34,16 +34,23 @@ std::string even_or_odd(int number)
     return (abs(number) % 2 == 0) ? "Even" : "Odd";
 }
 
+template <typename T>
+void swap(T& a, T& b) {
+    T c = a;
+    a = b;
+    b = c;
+}
+
 // Reversed Strings
-std::string reverseString(std::string str)
+std::string reverseString(std::string& str)
 {
-    int n = str.length();
-    std::string reverse = "";
-    for (int i = n - 1; i >= 0; i--)
+    int m = str.length() / 2;
+
+    for (size_t i = 0; i < m; i++)
     {
-        reverse += str.at(i);
+        swap(str.at(i), str.at(str.length() - 1 - i));
     }
-    return reverse;
+    return str;
 }
 
 // Remove String Spaces
