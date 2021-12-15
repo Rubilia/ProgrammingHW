@@ -1,0 +1,3 @@
+﻿  Matrix.cpp
+D:\Documents\ProgrammingHWSPBU\HW\MatrixLib\MatrixLib\Matrix.cpp(78,27): warning C4244: '=': conversion from 'size_t' to 'double', possible loss of data
+  MatrixLib.vcxproj -> D:\Documents\ProgrammingHWSPBU\HW\MatrixLib\x64\Debug\MatrixLib.exe
