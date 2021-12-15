@@ -12,7 +12,7 @@ void star() {
     x_p /= 5.;
     y_p /= 5.;
     x = x_p;
-    y = abs(y_p);
+    y = (y_p >= 0)? y_p : -y_p
 
     for (int i = 0; i < 5.; i++)
     {
