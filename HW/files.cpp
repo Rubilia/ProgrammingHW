@@ -40,11 +40,10 @@ int tex2wiki(int argc, const char* argv[]) {
 
 
 int file2hex(int argc, const char* argv[]) {
-    if (argc != 1)
+    if (argc == 1)
         return 1;
 
-    const char *path = "a.txt";
-    std::ifstream file(path, std::ifstream::in);
+    std::ifstream file(argv[1], std::ifstream::in);
 
 
     if (!file.is_open())
@@ -53,7 +52,6 @@ int file2hex(int argc, const char* argv[]) {
 
 
     unsigned char c;
-    //std::string hex_val;
     std::string str_output = "";
     int counter = 0, global_counter = 0;
     while ((c = file.get()) != (unsigned char)EOF)
@@ -61,7 +59,6 @@ int file2hex(int argc, const char* argv[]) {
         if (counter == 0)
             std::cout << std::setfill('0') << std::setw(10) << std::hex << 16 * global_counter << ": ";
 
-        //c = file.get();
         str_output += c;
 
         std::cout << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)c << " ";
