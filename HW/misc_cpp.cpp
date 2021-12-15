@@ -105,28 +105,23 @@ void task6() {
     }
 }
 
-int compute_r2(int n) {
-    int r_2 = 0;
-
-    for (int d = 1; d <= n; d += 2)
-    {
-        if (n % d == 0)
-            r_2 += d % 4 == 1 ? 1 : -1;
-    }
-    return r_2 * 4;
+int max(int a, int b) {
+    return (a >= b) ? a : b;
 }
-
 
 void task7() {
     int R, n = 1;
     std::cout << "Enter R: ";
     std::cin >> R;
+    int N = 0, g = (int) ((double) R / sqrt(2));
+    N = (2 * g + 1) * (2 * g + 1) + 4 * (R - g);
 
-    for (int i = 1; i <= R * R; i++)
+    for (int b = 1; b < g + 1; b++)
     {
-        n += compute_r2(i);
+        N += 8 * (((int)sqrt(R * R - b * b)) - max(g + 1, b + 1) + 1);
     }
-    std::cout << n << std::endl;
+
+    std::cout << N << std::endl;
 }
 
 void task8() {
@@ -145,6 +140,6 @@ void task8() {
 
 
 int main() {
-    task8();
+    task7();
 	return 0;
 }
