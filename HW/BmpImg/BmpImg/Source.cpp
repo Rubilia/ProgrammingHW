@@ -198,6 +198,15 @@ void sharpen_img(char* source = (char*)"data\\kidsnoise.bmp", char* destination 
 
 
 	des_img = convolution(des_img, 3, (double**)kernel_sharpen);
+
+	for (size_t i = 0; i < 3; i++)
+		delete [] kernel_sharpen[i];
+	delete [] kernel_sharpen;
+
+	for (size_t i = 0; i < 5; i++)
+		delete [] kernel_blur[i];
+	delete [] kernel_blur;
+
 	writeRgbImg(destination, des_img);
 	deleteRgbImg(src_img);
 	deleteRgbImg(des_img);
@@ -259,6 +268,9 @@ void median_filtering(char* source = (char*)"data\\kidsnoise.bmp", char* destina
 			dest_img.pixels[y][x].Red = get_median(window_r, s);
 			dest_img.pixels[y][x].Green = get_median(window_g, s);
 			dest_img.pixels[y][x].Blue = get_median(window_b, s);
+			delete [] window_r;
+			delete [] window_g;
+			delete [] window_b;
 		}
 	}
 	writeRgbImg(destination, dest_img);
