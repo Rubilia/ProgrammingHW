@@ -40,7 +40,7 @@ int tex2wiki(int argc, const char* argv[]) {
 
 
 int file2hex(int argc, const char* argv[]) {
-    if (argc == 1)
+    if (argc == 0)
         return 1;
 
     std::ifstream file(argv[1], std::ifstream::in);
@@ -59,14 +59,17 @@ int file2hex(int argc, const char* argv[]) {
         if (counter == 0)
             std::cout << std::setfill('0') << std::setw(10) << std::hex << 16 * global_counter << ": ";
 
-        str_output += c;
+        if (c < 32)
+            str_output += ".";
+        else
+            str_output += c;
 
         std::cout << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)c << " ";
         counter++;
 
-        if (counter == 7)
+        if (counter == 8)
             std::cout << " |  ";
-        else if (counter == 15) {
+        else if (counter == 16) {
             std::cout << "  " + str_output << std::endl;
             counter = 0;
             str_output = "";
